@@ -95,6 +95,7 @@ def train(original_imgs_path, img_flag, alpha, w1, w2):
 	all_ssim_loss = 0.
 	all_fea_loss = 0.
 	for e in tbar:
+		fusion_model.cuda()
 		print('Epoch %d.....' % e)
 		# load training database
 		image_set_ir, batches = utils.load_dataset(original_imgs_path, batch_size)
